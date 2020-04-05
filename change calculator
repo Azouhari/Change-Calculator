@@ -1,0 +1,29 @@
+# This program allows the user to input a certain amount of change, and then print
+# how how many quarters, dimes, nickels, and pennies are needed to make up the amount needed
+
+def main():
+    # Create a variable to control the loop.
+    again = 'y'
+    while again.lower() == 'y':
+        try:
+            # prompt the user to enter the amount
+            change = float(input('\nEnter the amount of change : ')) * 100
+            # Calculate the quarters, dimes, nickels, and pennies are needed.
+            quarter = int(change / 25)
+            dime = int((change % 25) / 10)
+            nickel = int(((change % 25) % 10) / 5 )
+            penny = int((((change % 25) % 10) % 5 ) / 1)
+            # Dispaly how how many quarters, dimes, nickels, and pennies are needed to make up the amount needed.
+            print('you need ' + str(quarter) + ' quarters,' +
+                str(dime) + ' dimes,' + str(nickel) + ' nickels, and ' +
+                str(penny) + ' pennies')
+        except Exception:
+            # dispaly a message if the input wasn't a float.
+            print('\nformat invalid. put float number like 1.45')
+        # ask the user to repeat or end the operation.
+        print('\nDo you want to claculate the change again?')
+        again = input('y = yes, anything else = no: ')
+
+
+# Call the main function.e
+main()
